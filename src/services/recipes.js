@@ -1,4 +1,4 @@
-const fetchRecipes = async (query) => {
+export async function fetchRecipes(query) {
   try {
     const url = "https://choosin-foods-recipes.herokuapp.com/api/v1/recipes?key=9c18d10fb5a0f5a8aa140aa5e94ceb87&ingredient=" + query
     const result = await fetch(url);
@@ -10,5 +10,3 @@ const fetchRecipes = async (query) => {
     return(error)
   }
 }
-
-module.exports = fetchRecipes;

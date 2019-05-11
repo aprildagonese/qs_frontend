@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
-import recipes from './services/recipes'
-import calData from './services/calories'
+import { fetchRecipes } from './services/recipes'
+import { fetchMealHistory } from './services/calories'
 import './App.css';
 
 class App extends Component {
@@ -17,9 +17,9 @@ class App extends Component {
     }
   }
 
-  async fetchRecipes(query) {
+  async getRecipes(query) {
     this.setState({ isLoading: true })
-    const ingredientResults = await recipes(query)
+    const ingredientResults = await fetchRecipes(query)
     this.setState({
       currentIngredient: ingredientResults.ingredient,
       recipeData: ingredientResults.recipes,
@@ -27,9 +27,9 @@ class App extends Component {
     })
   }
 
-  async fetchMealHistory(query) {
+  async getMealHistory(query) {
     this.setState({ isLoading: true });
-    const mealResults = await calData(query)
+    const mealResults = await fetchMealHistory(query)
   }
 
   render() {
