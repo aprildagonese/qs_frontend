@@ -14,8 +14,7 @@ class App extends Component {
       recipeData: [],
       mealHistory: null,
       isLoading: false,
-      error: null,
-      testing: "apples"
+      error: null
     }
   }
 
