@@ -9,6 +9,7 @@ class Calendar extends Component {
   render(dates) {
     return (
       <div className='calendar'>
+        <div className='cal-title'>Calendar</div>
         {this.props.dates.meals.dates.map(date => {
           const newDate = new Date(Object.keys(date)[0])
           const prettyDate = newDate.toLocaleDateString('en-US')

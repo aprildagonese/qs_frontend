@@ -57,16 +57,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { this.state.mealHistory &&
-          <Calendar dates={this.state.mealHistory}
-                    setDate={this.setCurrentDate}
-          />
-        }
-        { this.state.currentDate &&
-          <DateMeals meals={this.state.dateMeals}
-                     setCurrentFoods={this.setCurrentFoods}
-          />
-        }
+        <span className="nav">PLACEHOLDER FOR NAV COMPONENT</span>
+        <span className="body-panel">
+          <span className="foods-panel">
+          <div className="meal-foods">PLACEHOLDER FOR MEALFOODS COMPONENT</div>
+            <DateMeals meals={this.state.dateMeals}
+                       setCurrentFoods={this.setCurrentFoods}/>
+          </span>
+            { this.state.mealHistory &&
+              <Calendar dates={this.state.mealHistory}
+              setDate={this.setCurrentDate}
+              />
+            }
+        </span>
       </div>
     )
   };

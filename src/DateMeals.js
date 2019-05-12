@@ -6,20 +6,31 @@ class DateMeals extends Component {
     super()
   };
 
+  totalCals = () => {
+    return "Butts"
+  }
+
   render() {
     return(
-      <div className='dateMeals'>
-        <div className='meals'>
-          { this.props.meals &&
-            this.props.meals.map(meal => {
-              return <Meal key={meal.name}
-                           name={meal.name}
-                           foods={meal.foods}
-                           setCurrentFoods={this.props.setCurrentFoods} />
-            })
-          }
-        </div>
-      </div>
+      <>
+        { !this.props.meals
+          ? <div>Choose a date from the calendar to see your meals.</div>
+          : <div className='dateMeals'>
+              <div className='dateMeals-left'>
+                {this.props.meals.map(meal => {
+                      return <Meal key={meal.name}
+                                   name={meal.name}
+                                   foods={meal.foods}
+                                   setCurrentFoods={this.props.setCurrentFoods} />
+                    })}
+              </div>
+              <div className='dateMeals-right'>
+                <div>Total Calories: {this.totalCals()}</div>
+                <button>Add Meal</button>
+              </div>
+            </div>
+        }
+      </>
     )
   }
 }
