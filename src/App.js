@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Calendar from './Calendar';
 import { fetchRecipes } from './services/recipes'
 import { fetchMealHistory } from './services/calories'
 import './App.css';
@@ -9,17 +10,18 @@ class App extends Component {
     this.state = {
       currentUserKey: "92e8d1428fcadc1c114e4d05b203df9b",
       currentIngredient: null,
+      currentDate: null,
       recipeData: [],
-      mealHistory: {},
+      mealHistory: null,
       isLoading: false,
       error: null,
       testing: "apples"
     }
   }
 
-  async componentDidMount(query) {
+  async componentDidMount() {
     this.setState({ isLoading: true });
-    const mealResults = await fetchMealHistory(query, this.state.currentUserKey)
+    const mealResults = await fetchMealHistory(this.state.currentUserKey)
     this.setState({
       mealHistory: mealResults,
       isLoading: false
@@ -36,13 +38,23 @@ class App extends Component {
     })
   }
 
+  setCurrentDate = (date) => {
+    this.setState({
+      currentDate: date
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        Hi Peregrine!
+        { this.state.mealHistory &&
+          <Calendar dates={this.state.mealHistory}
+                    setDate={this.setCurrentDate}
+          />
+        }
       </div>
     )
-  }
-};
+  };
+}
 
 export default App;
