@@ -1,4 +1,4 @@
-export async function fetchMealHistory(query, userKey) {
+export async function fetchMealHistory(userKey) {
   try {
     const url = "https://choosin-foods.herokuapp.com/api/v1/meals?api_key=" + userKey
     const result = await fetch(url);
