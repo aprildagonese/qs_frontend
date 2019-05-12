@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import fetch from 'node-fetch';
 import { fetchRecipes } from './services/recipes'
 import { fetchMealHistory } from './services/calories'
 import './App.css';
@@ -8,13 +7,23 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      currentUserKey: "92e8d1428fcadc1c114e4d05b203df9b",
       currentIngredient: null,
       recipeData: [],
-      calorieData: null,
+      mealHistory: {},
       isLoading: false,
       error: null,
       testing: "apples"
     }
+  }
+
+  async componentDidMount(query) {
+    this.setState({ isLoading: true });
+    const mealResults = await fetchMealHistory(query, this.state.currentUserKey)
+    this.setState({
+      mealHistory: mealResults,
+      isLoading: false
+    })
   }
 
   async getRecipes(query) {
@@ -25,11 +34,6 @@ class App extends Component {
       recipeData: ingredientResults.recipes,
       isLoading: false
     })
-  }
-
-  async getMealHistory(query) {
-    this.setState({ isLoading: true });
-    const mealResults = await fetchMealHistory(query)
   }
 
   render() {
