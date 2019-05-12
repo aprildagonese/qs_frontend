@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from './Nav';
 import Calendar from './Calendar';
 import DateMeals from './DateMeals';
 import { fetchRecipes } from './services/recipes'
@@ -57,7 +58,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <span className="nav">PLACEHOLDER FOR NAV COMPONENT</span>
+        <Nav/>
         <span className="body-panel">
           <span className="foods-panel">
           <div className="meal-foods">PLACEHOLDER FOR MEALFOODS COMPONENT</div>
