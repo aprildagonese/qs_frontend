@@ -51,14 +51,9 @@ class App extends Component {
     })
   }
 
-  setCurrentFoods = (foods) => {
+  setCurrentFoods = (foods, meal) => {
     this.setState({
-      currentFoods: foods
-    })
-  }
-
-  setCurrentMeal = (meal) => {
-    this.setState({
+      currentFoods: foods,
       currentMeal: meal
     })
   }
@@ -69,9 +64,12 @@ class App extends Component {
         <Nav/>
         <span className="body-panel">
           <span className="foods-panel">
-          <MealFoods/>
+          <MealFoods meal={this.state.currentMeal}
+                     foods={this.state.currentFoods}
+                     date={this.state.currentDate}/>
           <DateMeals meals={this.state.dateMeals}
                      setCurrentFoods={this.setCurrentFoods}/>
+
           </span>
             { this.state.mealHistory &&
               <Calendar dates={this.state.mealHistory}
