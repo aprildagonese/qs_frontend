@@ -27,7 +27,6 @@ class DateMeals extends Component {
               </div>
               <div className='dateMeals-right'>
                 <div>Total Calories: {this.totalCals()}</div>
-                <button>Add Meal</button>
               </div>
             </div>
         }
