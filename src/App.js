@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Calendar from './Calendar';
+import MealFoods from './MealFoods';
 import DateMeals from './DateMeals';
 import { fetchRecipes } from './services/recipes'
 import { fetchMealHistory } from './services/calories'
@@ -16,6 +17,7 @@ class App extends Component {
       currentIngredient: null,
       currentDate: null,
       currentFoods: null,
+      currentMeal: null,
       mealHistory: data,
       dateMeals: null,
       isLoading: false,
@@ -55,15 +57,21 @@ class App extends Component {
     })
   }
 
+  setCurrentMeal = (meal) => {
+    this.setState({
+      currentMeal: meal
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Nav/>
         <span className="body-panel">
           <span className="foods-panel">
-          <div className="meal-foods">PLACEHOLDER FOR MEALFOODS COMPONENT</div>
-            <DateMeals meals={this.state.dateMeals}
-                       setCurrentFoods={this.setCurrentFoods}/>
+          <MealFoods/>
+          <DateMeals meals={this.state.dateMeals}
+                     setCurrentFoods={this.setCurrentFoods}/>
           </span>
             { this.state.mealHistory &&
               <Calendar dates={this.state.mealHistory}
