@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Food from './Food';
 
 class MealFoods extends Component {
   constructor() {
@@ -14,7 +15,10 @@ class MealFoods extends Component {
           <h4>{this.props.date}</h4>
           <ul>
             {this.props.foods.map(food => {
-              return <li>{food.name}, {food.calories} calories</li>
+              return <Food key={food.name}
+                           data={food}
+                           userID={this.props.userID}
+                           mealID={this.props.mealID}/>
             })}
           </ul>
         </>
