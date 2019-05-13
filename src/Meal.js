@@ -6,7 +6,7 @@ class Meal extends Component {
   };
 
   setCurrentFoods = () => {
-    this.props.setCurrentFoods(this.props.foods, this.props.name)
+    this.props.setCurrentFoods(this.props.foods, this.props.name, this.props.mealID)
   }
 
   render() {
