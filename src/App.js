@@ -70,8 +70,10 @@ class App extends Component {
           NAV COMPONENT
           <button onClick={this.showModal}>Add Foods</button>
         </span>
-        <Modal handleClose={this.hideModal}
-               showModal={this.state.showModal}/>
+        <Modal closeModal={this.hideModal}
+               showModal={this.state.showModal}
+               type="addFood"
+               user={this.state.currentUserKey}/>
         <span className="body-panel">
           <span className="foods-panel">
           <div className="meal-foods">PLACEHOLDER FOR MEALFOODS COMPONENT</div>
