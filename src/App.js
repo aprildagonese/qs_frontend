@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 import Calendar from './Calendar';
 import DateMeals from './DateMeals';
+import Modal from './Modal';
 import { fetchRecipes } from './services/recipes'
 import { fetchMealHistory } from './services/calories'
 import './App.css';
@@ -19,7 +20,7 @@ class App extends Component {
       mealHistory: data,
       dateMeals: null,
       isLoading: false,
-      error: null
+      showModal: false
     }
   }
 
@@ -55,10 +56,22 @@ class App extends Component {
     })
   }
 
+  showModal = () => {
+    this.setState({ showModal: true });
+  };
+
+  hideModal = () => {
+    this.setState({ showModal: false });
+  };
+
   render() {
     return (
       <div className="App">
-        <Nav/>
+        <Nav showModal={this.showModal}/>
+        <Modal closeModal={this.hideModal}
+               showModal={this.state.showModal}
+               type="addFood"
+               user={this.state.currentUserKey}/>
         <span className="body-panel">
           <span className="foods-panel">
           <div className="meal-foods">PLACEHOLDER FOR MEALFOODS COMPONENT</div>
