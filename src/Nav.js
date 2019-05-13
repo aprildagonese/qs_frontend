@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Nav.css';
 
 class Nav extends Component {
   constructor() {
@@ -6,7 +7,7 @@ class Nav extends Component {
   }
 
   addFood = () => {
-    console.log('FOOD')
+    this.props.showModal()
   }
 
   render() {
