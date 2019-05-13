@@ -67,10 +67,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <span className="nav">
-          <Nav/>
-          <button onClick={this.showModal}>Add Foods</button>
-        </span>
+        <Nav showModal={this.showModal}/>
         <Modal closeModal={this.hideModal}
                showModal={this.state.showModal}
                type="addFood"
