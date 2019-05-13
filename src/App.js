@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from './Nav';
 import Calendar from './Calendar';
 import DateMeals from './DateMeals';
 import Modal from './Modal';
@@ -67,7 +68,7 @@ class App extends Component {
     return (
       <div className="App">
         <span className="nav">
-          NAV COMPONENT
+          <Nav/>
           <button onClick={this.showModal}>Add Foods</button>
         </span>
         <Modal closeModal={this.hideModal}
