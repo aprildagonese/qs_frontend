@@ -19,3 +19,14 @@ export async function saveMealEntry(userKey, meal, date, food) {
       return(error)
   }
 };
+
+export async function deleteFood(userID, mealID, foodID) {
+  try {
+    const url = "https://choosin-foods.herokuapp.com/api/v1/meal-foods?userID=" + userID + "&mealID=" + mealID + "&foodID=" + foodID
+    const result = await fetch(url, {method: 'DELETE'});
+    const data = await result.json()
+    return data
+  } catch (error) {
+    return error
+  }
+}
