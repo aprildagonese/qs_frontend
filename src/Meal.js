@@ -6,9 +6,9 @@ class Meal extends Component {
   };
 
   setCurrentFoods = () => {
-    this.props.setCurrentFoods(this.props.foods)
+    this.props.setCurrentFoods(this.props.foods, this.props.name)
   }
-  
+
   render() {
     return(
       <button className='meal'

@@ -21,7 +21,8 @@ class DateMeals extends Component {
                       return <Meal key={meal.name}
                                    name={meal.name}
                                    foods={meal.foods}
-                                   setCurrentFoods={this.props.setCurrentFoods} />
+                                   setCurrentFoods={this.props.setCurrentFoods}
+                                   setCurrentMeal={this.props.setCurrentMeal}/>
                     })}
               </div>
               <div className='dateMeals-right'>
