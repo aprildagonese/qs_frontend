@@ -22,7 +22,8 @@ class DateMeals extends Component {
                                    name={meal.name}
                                    foods={meal.foods}
                                    setCurrentFoods={this.props.setCurrentFoods}
-                                   setCurrentMeal={this.props.setCurrentMeal}/>
+                                   mealID={meal.id}
+                                   />
                     })}
               </div>
               <div className='dateMeals-right'>

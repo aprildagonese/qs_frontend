@@ -22,7 +22,9 @@ class App extends Component {
       mealHistory: data,
       dateMeals: null,
       isLoading: false,
-      showModal: false
+      showModal: false,
+      userID: 3, //UNDO w/ componentDidMount
+      mealID: null
     }
   }
 
@@ -32,6 +34,7 @@ class App extends Component {
   //   this.setState({
   //     mealHistory: mealResults,
   //     isLoading: false
+  //     userID: mealResults.user_id
   //   })
   // }
 
@@ -42,21 +45,22 @@ class App extends Component {
       currentIngredient: ingredientResults.ingredient,
       recipeData: ingredientResults.recipes,
       isLoading: false
-    })
+    });
   }
 
   setCurrentDate = (date, dateMeals) => {
     this.setState({
       currentDate: date,
       dateMeals: dateMeals
-    })
+    });
   }
 
-  setCurrentFoods = (foods, meal) => {
+  setCurrentFoods = (foods, meal, id) => {
     this.setState({
       currentFoods: foods,
-      currentMeal: meal
-    })
+      currentMeal: meal,
+      mealID: id
+    });
   }
 
   showModal = () => {
@@ -77,9 +81,13 @@ class App extends Component {
                user={this.state.currentUserKey}/>
         <span className="body-panel">
           <span className="foods-panel">
-          <MealFoods meal={this.state.currentMeal}
+          <MealFoods key={this.state.currentDate}
+                     meal={this.state.currentMeal}
                      foods={this.state.currentFoods}
-                     date={this.state.currentDate}/>
+                     date={this.state.currentDate}
+                     userID={this.state.userID}
+                     mealID={this.state.mealID}
+                     setFoodID={this.setFoodID}/>
           <DateMeals meals={this.state.dateMeals}
                      setCurrentFoods={this.setCurrentFoods}/>
 
