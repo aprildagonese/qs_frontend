@@ -57,7 +57,8 @@ class Food extends Component {
       </li>
       <Modal hideModal={this.hideModal}
              showModal={this.state.showModal}
-             type="foodShow"/>
+             type="foodShow"
+             food={this.props.data}/>
     </div>
   )}
 }
