@@ -18,7 +18,7 @@ class Food extends Component {
     this.setState({
       recipes: recipes
     })
-    console.log(this.state.recipes)
+    return this.state.recipes;
   }
 
   deleteRecord = () => {

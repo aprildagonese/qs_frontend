@@ -4,18 +4,22 @@ class FoodShow extends Component {
   constructor() {
     super()
     this.state = {
-      recipes: null
+      hover: false
     }
   }
 
   render() {
     return(
       <div>
-        Food Show
         <h3>{this.props.food.name}</h3>
         <h4>Calories: {this.props.food.calories}</h4>
-        {this.state.recipes && this.props.recipes.map(recipe => {
-          return recipe.label
+        <h4>Recipes</h4>
+        {this.props.recipes && this.props.recipes.recipes.map(recipe => {
+          return <a onClick={() =>  window.open(recipe.recipe_url, "_blank")}
+                    href={recipe.url}
+                    target="_blank">
+            {recipe.label}<br/>
+          </a>
         })}
       </div>
     )
