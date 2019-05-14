@@ -42,9 +42,10 @@
 }
 
 .food-name-on {
-  color: #f1f1f1;
+  color: #1e7a8c;
   cursor: pointer;
 }
 
 .food-name-off {
+  color: #053c5e;
 }
