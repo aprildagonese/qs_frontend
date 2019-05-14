@@ -24,9 +24,21 @@ export async function deleteFood(userID, mealID, foodID) {
   try {
     const url = "https://choosin-foods.herokuapp.com/api/v1/meal-foods?userID=" + userID + "&mealID=" + mealID + "&foodID=" + foodID
     const result = await fetch(url, {method: 'DELETE'});
-    const data = await result.json()
-    return data
+    const data = await result.json();
+    return data;
   } catch (error) {
-    return error
+    return error;
   }
+}
+
+export async function fetchFood(food) {
+  try {
+    const url = `http://choosin-foods.herokuapp.com/api/v1/foods?food_name=${food}`;
+    const result = await fetch(url);
+    const data = await result.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
+
 }
