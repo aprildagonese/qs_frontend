@@ -7,4 +7,26 @@ export async function fetchMealHistory(userKey) {
   } catch (error) {
       return(error)
   }
+};
+
+export async function saveMealEntry(userKey, meal, date, food) {
+  try {
+    const url = "https://choosin-foods.herokuapp.com/api/v1/meal-foods?api_key=" + userKey + "&meal_name=" + meal + "&date=" + date + "&food_name=" + food
+    const result = await fetch(url, {method: 'POST'});
+    const data = await result.json()
+    return data
+  } catch (error) {
+      return(error)
+  }
+};
+
+export async function deleteFood(userID, mealID, foodID) {
+  try {
+    const url = "https://choosin-foods.herokuapp.com/api/v1/meal-foods?userID=" + userID + "&mealID=" + mealID + "&foodID=" + foodID
+    const result = await fetch(url, {method: 'DELETE'});
+    const data = await result.json()
+    return data
+  } catch (error) {
+    return error
+  }
 }
