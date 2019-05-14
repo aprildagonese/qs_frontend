@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Logout from './Logout';
 import './Nav.css';
 
 class Nav extends Component {
@@ -14,10 +15,13 @@ class Nav extends Component {
     return (
       <div className='nav'>
         <h1>Quantified Self</h1>
+        <div className="nav-right">
         <button className='add-food'
                 onClick={this.addFood}>
                 Add Meal
         </button>
+        <Logout logOut={this.props.logOut}/>
+        </div>
       </div>
     );
   }
