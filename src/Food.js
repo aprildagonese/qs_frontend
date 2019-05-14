@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import Modal from './Modal';
 import { deleteFood } from './services/calories'
+import { fetchRecipes } from './services/recipes'
 
 class Food extends Component {
   constructor() {
     super()
     this.state = {
       showModal: false,
-      hover: false
+      hover: false,
+      recipes: null
     }
+  }
+
+  getRecipes = async () => {
+    const recipes = await fetchRecipes(this.props.data.name);
+    this.setState({
+      recipes: recipes
+    })
+    console.log(this.state.recipes)
   }
 
   deleteRecord = () => {
@@ -28,6 +38,7 @@ class Food extends Component {
   };
 
   showFood = () => {
+    this.getRecipes()
     this.showModal()
   }
 
@@ -58,7 +69,8 @@ class Food extends Component {
       <Modal hideModal={this.hideModal}
              showModal={this.state.showModal}
              type="foodShow"
-             food={this.props.data}/>
+             food={this.props.data}
+             recipes={this.state.recipes}/>
     </div>
   )}
 }
