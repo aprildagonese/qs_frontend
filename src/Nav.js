@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchBar from './SearchBar';
 import './Nav.css';
 
 class Nav extends Component {
@@ -18,6 +19,7 @@ class Nav extends Component {
                 onClick={this.addFood}>
                 Add Food
         </button>
+        <SearchBar/>
       </div>
     );
   }
