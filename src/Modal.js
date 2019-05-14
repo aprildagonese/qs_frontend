@@ -20,7 +20,8 @@ class Modal extends Component {
         }
         {this.props.type === "foodShow" &&
           <section className="modal-main">
-            <FoodShow closeModal={this.props.hideModal}/>
+            <FoodShow closeModal={this.props.hideModal}
+                      food={this.props.food}/>
             <button onClick={this.props.hideModal}>Close</button>
           </section>
         }
