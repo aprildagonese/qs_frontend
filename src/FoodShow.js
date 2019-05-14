@@ -9,6 +9,8 @@ class FoodShow extends Component {
     return(
       <div>
         Food Show
+        <h3>{this.props.food.name}</h3>
+        <h4>Calories: {this.props.food.calories}</h4>
       </div>
     )
   }
