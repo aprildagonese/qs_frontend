@@ -46,8 +46,8 @@ export async function registerUser(email, password, passwordConfirmation) {
   try {
     const url = "https://choosin-foods.herokuapp.com/api/v1/users/register?email=" + email + "&password=" + password + "&password_confirmation=" + passwordConfirmation
     const result = await fetch(url, {method: 'POST'});
-    const data = await result.json()
-    return data
+    const api_key = await result.json()
+    return api_key
   } catch (error) {
     return error
   }

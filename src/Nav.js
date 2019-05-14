@@ -16,7 +16,7 @@ class Nav extends Component {
         <h1>Quantified Self</h1>
         <button className='add-food'
                 onClick={this.addFood}>
-                Add Food
+                Add Meal
         </button>
       </div>
     );

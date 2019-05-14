@@ -25,7 +25,8 @@ class App extends Component {
       isLoading: false,
       showModal: false,
       userID: null, //UNDO w/ componentDidMount
-      mealID: null
+      mealID: null,
+      error: null
     }
   }
 
@@ -47,14 +48,20 @@ class App extends Component {
   }
 
   setCurrentUserKey = async (key) => {
-    this.setState({
-      currentUserKey: key
-    });
-    const mealResults = await fetchMealHistory(key)
-    this.setState({
-      mealHistory: mealResults,
-      userID: mealResults.user_id
-    })
+    if (key === "Invalid credentials.") {
+      this.setState({
+        error: "Invalid credentials."
+      })
+    } else {
+      {this.setState({
+        currentUserKey: key
+      });
+      const mealResults = await fetchMealHistory(key)
+      this.setState({
+        mealHistory: mealResults,
+        userID: mealResults.user_id
+      })}
+    }
   }
 
   setCurrentFoods = (foods, meal, id) => {
@@ -104,7 +111,8 @@ class App extends Component {
                   }
               </span>
             </>
-          : <Login setUser={this.setCurrentUserKey}/>
+          : <Login setUser={this.setCurrentUserKey}
+                    error={this.error}/>
         }
       </div>
     )
