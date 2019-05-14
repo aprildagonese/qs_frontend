@@ -6,7 +6,8 @@ class Food extends Component {
   constructor() {
     super()
     this.state = {
-      showModal: false
+      showModal: false,
+      hover: false
     }
   }
 
@@ -30,15 +31,29 @@ class Food extends Component {
     this.showModal()
   }
 
+  hoverOn = () => {
+    this.setState({ hover: true })
+  }
+
+  hoverOff = () => {
+    this.setState({ hover: false })
+  }
+
   render() {
     return(
     <div>
       <li>
-      <a onClick={this.showFood}>{this.props.data.name}</a>, {this.props.data.calories} calories
-      <button className='delete-food'
-      onClick={this.deleteRecord}>
-      X
-      </button>
+        <a className={this.state.hover ? 'food-name-on' : 'food-name-off'}
+           onClick={this.showFood}
+           onMouseEnter={this.hoverOn}
+           onMouseLeave={this.hoverOff}>
+          {this.props.data.name}
+        </a>
+        , {this.props.data.calories} calories
+        <button className='delete-food'
+                onClick={this.deleteRecord}>
+          X
+        </button>
       </li>
       <Modal hideModal={this.hideModal}
              showModal={this.state.showModal}
