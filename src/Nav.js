@@ -18,10 +18,6 @@ class Nav extends Component {
                 onClick={this.addFood}>
                 Add Food
         </button>
-        <Modal closeModal={this.hideModal}
-               showModal={this.state.showModal}
-               type="login"
-               user={this.state.currentUserKey}/>
       </div>
     );
   }

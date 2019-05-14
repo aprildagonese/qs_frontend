@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUserKey: "92e8d1428fcadc1c114e4d05b203df9b",
+      currentUserKey: "1234",
       recipeData: [],
       currentIngredient: null,
       currentDate: null,
@@ -24,20 +24,10 @@ class App extends Component {
       dateMeals: null,
       isLoading: false,
       showModal: false,
-      userID: 3, //UNDO w/ componentDidMount
+      userID: null, //UNDO w/ componentDidMount
       mealID: null
     }
   }
-
-  // async componentDidMount() {
-  //   this.setState({ isLoading: true });
-  //   const mealResults = await fetchMealHistory(this.state.currentUserKey)
-  //   this.setState({
-  //     mealHistory: mealResults,
-  //     isLoading: false
-  //     userID: mealResults.user_id
-  //   })
-  // }
 
   async getRecipes(query) {
     this.setState({ isLoading: true })
@@ -56,10 +46,15 @@ class App extends Component {
     });
   }
 
-  setCurrentUserKey = (key) => {
+  setCurrentUserKey = async (key) => {
     this.setState({
-      currentUserKey: date
+      currentUserKey: key
     });
+    const mealResults = await fetchMealHistory(key)
+    this.setState({
+      mealHistory: mealResults,
+      userID: mealResults.user_id
+    })
   }
 
   setCurrentFoods = (foods, meal, id) => {
@@ -84,6 +79,7 @@ class App extends Component {
         {this.state.currentUserKey
           ?  <>
               <Nav showModal={this.showModal}/>
+              {console.log(this.state.mealResults)}
               <Modal closeModal={this.hideModal}
                      showModal={this.state.showModal}
                      type="addFood"
