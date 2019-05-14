@@ -29,17 +29,13 @@ class Food extends Component {
     console.log(userID, mealID, foodID);
   }
 
-  showModal = () => {
-    this.setState({ showModal: true });
-  };
-
   hideModal = () => {
     this.setState({ showModal: false });
   };
 
   showFood = () => {
     this.getRecipes()
-    this.showModal()
+    this.setState({ showModal: true });
   }
 
   hoverOn = () => {
