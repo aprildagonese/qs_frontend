@@ -87,7 +87,8 @@ class App extends Component {
                      date={this.state.currentDate}
                      userID={this.state.userID}
                      mealID={this.state.mealID}
-                     setFoodID={this.setFoodID}/>
+                     setFoodID={this.setFoodID}
+                     />
           <DateMeals meals={this.state.dateMeals}
                      setCurrentFoods={this.setCurrentFoods}/>
 
