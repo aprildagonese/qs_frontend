@@ -4,6 +4,7 @@ import Calendar from './Calendar';
 import MealFoods from './MealFoods';
 import DateMeals from './DateMeals';
 import Modal from './Modal';
+import Login from './Login';
 import { fetchRecipes } from './services/recipes'
 import { fetchMealHistory } from './services/calories'
 import './App.css';
@@ -55,6 +56,12 @@ class App extends Component {
     });
   }
 
+  setCurrentUserKey = (key) => {
+    this.setState({
+      currentUserKey: date
+    });
+  }
+
   setCurrentFoods = (foods, meal, id) => {
     this.setState({
       currentFoods: foods,
@@ -74,31 +81,35 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav showModal={this.showModal}/>
-        <Modal closeModal={this.hideModal}
-               showModal={this.state.showModal}
-               type="addFood"
-               user={this.state.currentUserKey}/>
-        <span className="body-panel">
-          <span className="foods-panel">
-          <MealFoods key={this.state.currentDate}
-                     meal={this.state.currentMeal}
-                     foods={this.state.currentFoods}
-                     date={this.state.currentDate}
-                     userID={this.state.userID}
-                     mealID={this.state.mealID}
-                     setFoodID={this.setFoodID}
-                     />
-          <DateMeals meals={this.state.dateMeals}
-                     setCurrentFoods={this.setCurrentFoods}/>
-
-          </span>
-            { this.state.mealHistory &&
-              <Calendar dates={this.state.mealHistory}
-              setDate={this.setCurrentDate}
-              />
-            }
-        </span>
+        {this.state.currentUserKey
+          ?  <>
+              <Nav showModal={this.showModal}/>
+              <Modal closeModal={this.hideModal}
+                     showModal={this.state.showModal}
+                     type="addFood"
+                     user={this.state.currentUserKey}/>
+              <span className="body-panel">
+                <span className="foods-panel">
+                <MealFoods key={this.state.currentDate}
+                           meal={this.state.currentMeal}
+                           foods={this.state.currentFoods}
+                           date={this.state.currentDate}
+                           userID={this.state.userID}
+                           mealID={this.state.mealID}
+                           setFoodID={this.setFoodID}
+                           />
+                <DateMeals meals={this.state.dateMeals}
+                           setCurrentFoods={this.setCurrentFoods}/>
+                </span>
+                  { this.state.mealHistory &&
+                    <Calendar dates={this.state.mealHistory}
+                    setDate={this.setCurrentDate}
+                    />
+                  }
+              </span>
+            </>
+          : <Login setUser={this.setCurrentUserKey}/>
+        }
       </div>
     )
   };
