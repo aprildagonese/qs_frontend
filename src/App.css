@@ -40,3 +40,12 @@
   background-color: lightblue;
   width: 100%;
 }
+
+.food-name-on {
+  color: #1e7a8c;
+  cursor: pointer;
+}
+
+.food-name-off {
+  color: #053c5e;
+}

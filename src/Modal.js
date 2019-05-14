@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddMealForm from './AddMealForm';
+import FoodShow from './FoodShow';
 import './Modal.css';
 
 class Modal extends Component {
@@ -15,6 +16,14 @@ class Modal extends Component {
             <AddMealForm user={this.props.user}
                          closeModal={this.props.closeModal}/>
             <button onClick={this.props.closeModal}>Close</button>
+          </section>
+        }
+        {this.props.type === "foodShow" &&
+          <section className="modal-main">
+            <FoodShow closeModal={this.props.hideModal}
+                      food={this.props.food}
+                      recipes={this.props.recipes}/>
+            <button onClick={this.props.hideModal}>Close</button>
           </section>
         }
       </div>

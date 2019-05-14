@@ -6,6 +6,8 @@ class MealFoods extends Component {
     super()
   };
 
+
+
   render() {
     return(
       <div className='meal-foods'>
@@ -18,7 +20,8 @@ class MealFoods extends Component {
               return <Food key={food.name}
                            data={food}
                            userID={this.props.userID}
-                           mealID={this.props.mealID}/>
+                           mealID={this.props.mealID}
+                           />
             })}
           </ul>
         </>
