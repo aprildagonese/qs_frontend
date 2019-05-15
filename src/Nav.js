@@ -17,12 +17,12 @@ class Nav extends Component {
       <div className='nav'>
         <h1>quantifiedSelf</h1>
         <div className="nav-right">
-        <button className='add-food'
-                onClick={this.addFood}>
-                Add Meal
-        </button>
-        <SearchBar/>
-        <Logout logOut={this.props.logOut}/>
+          <SearchBar/>
+          <button className='add-food'
+                  onClick={this.addFood}>
+                  Add Meal
+          </button>
+          <Logout logOut={this.props.logOut}/>
         </div>
       </div>
     );

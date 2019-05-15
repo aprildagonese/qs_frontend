@@ -7,3 +7,14 @@
   color: #F0EDEE;
   padding: 0% 2% 0% 2%
 }
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.searchbar {
+  padding: 5px;
+  margin: 10px;
+}

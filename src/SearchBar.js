@@ -63,6 +63,7 @@ class SearchBar extends Component {
                  value={this.state.food}
                  placeholder="Search Foods"
                  onChange={this.changeFood}
+                 className="searchbar"
                  onKeyPress={this.enterListener}
                  />
         </form>
