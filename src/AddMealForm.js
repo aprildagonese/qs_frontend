@@ -12,27 +12,32 @@ class AddMealForm extends Component {
     }
   };
 
+  componentDidMount = () => {
+    this.setState({
+      food: this.props.food
+    })
+  }
+
   saveEntry = async () => {
     const user = this.props.user
     const meal = this.state.meal
     const date = this.state.date
     const food = this.state.food
     // await saveMealEntry(user, meal, date, food)
-    console.log(user, meal, date, food)
     this.props.closeModal()
   }
 
   changeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-
+    console.log(this.state.food)
     this.setState({ [name]: value })
   }
 
   render() {
     return(
       <div className="add-meal">
-        Add Food to Any Meal
+        <span className="add-meal-title">Add Food to Any Meal</span>
         <form className="form">
            <input type="text"
                   name="meal"

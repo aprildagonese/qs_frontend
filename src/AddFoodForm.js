@@ -27,7 +27,7 @@ class AddFoodForm extends Component {
   render() {
     return(
       <div>
-        We don't have that food yet. Would you like to add it to our database?
+        <span className="add-food-title">We don't have that food yet. Would you like to add it to our database?</span>
         <form>
           <input type="text"
                  name="food"
