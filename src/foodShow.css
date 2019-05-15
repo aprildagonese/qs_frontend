@@ -1,0 +1,27 @@
+.food-show {
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-show-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-right: 7%;
+}
+
+.recipes-listt {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-meal-box {
+  text-align: center;
+  width: 50%;
+}
+
+.recipes-title {
+  margin-top: 0;
+}
