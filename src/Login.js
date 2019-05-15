@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { logInUser } from './services/calories'
 import { registerUser } from './services/calories'
+import './form.css';
 
 class Login extends Component {
   constructor() {
@@ -43,30 +44,38 @@ class Login extends Component {
   render() {
     return(
       <>
-        <form>
+        <div className="landing-title">quantifiedSelf</div>
+        <form className="form login">
            <input type="text"
                   name="email"
                   value={this.state.email}
                   placeholder="Email address"
-                  onChange={this.changeHandler} />
+                  onChange={this.changeHandler}
+                  className="form-input" />
            <input type="text"
                   name="password"
                   value={this.state.password}
                   placeholder="Password"
-                  onChange={this.changeHandler} />
+                  onChange={this.changeHandler}
+                  className="form-input" />
            <input type="text"
                   name="passwordConfirmation"
                   value={this.state.passwordConfirmation}
                   placeholder="Confirm Password"
-                  onChange={this.changeHandler} />
-           <input type="button"
-                  name="submit"
-                  value="Log In"
-                  onClick={this.logIn} />
-           <input type="button"
-                  name="submit"
-                  value="Register"
-                  onClick={this.register} />
+                  onChange={this.changeHandler}
+                  className="form-input" />
+           <div className="form-buttons">
+             <input type="button"
+                    name="submit"
+                    value="Log In"
+                    onClick={this.logIn}
+                    className="button form-button" />
+             <input type="button"
+                    name="submit"
+                    value="Register"
+                    onClick={this.register}
+                    className="button form-button" />
+           </div>
         </form>
         {this.props.error &&
           <div className="error">

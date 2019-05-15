@@ -40,7 +40,7 @@ export async function deleteFood(userID, mealID, foodID) {
   } catch (error) {
     return error;
   }
-}
+};
 
 export async function fetchFood(food) {
   try {
@@ -51,7 +51,7 @@ export async function fetchFood(food) {
   } catch (error) {
     return null;
   }
-}
+};
 
 export async function logInUser(email, password) {
   try {
@@ -62,7 +62,7 @@ export async function logInUser(email, password) {
   } catch (error) {
     return error
   }
-}
+};
 
 export async function registerUser(email, password, passwordConfirmation) {
   try {

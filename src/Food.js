@@ -48,20 +48,18 @@ class Food extends Component {
 
   render() {
     return(
-    <div>
-      <li>
-        <a className={this.state.hover ? 'food-name-on' : 'food-name-off'}
-           onClick={this.showFood}
-           onMouseEnter={this.hoverOn}
-           onMouseLeave={this.hoverOff}>
-          {this.props.data.name}
-        </a>
-        , {this.props.data.calories} calories
-        <button className='delete-food'
-                onClick={this.deleteRecord}>
-          X
-        </button>
-      </li>
+    <div className="meal-food">
+      <a className={this.state.hover ? 'food-name-on' : 'food-name-off'}
+         onClick={this.showFood}
+         onMouseEnter={this.hoverOn}
+         onMouseLeave={this.hoverOff}>
+        {this.props.data.name}
+      </a>
+      , {this.props.data.calories} calories
+      <button id='delete-food'
+              onClick={this.deleteRecord}>
+        X
+      </button>
       <Modal hideModal={this.hideModal}
              showModal={this.state.showModal}
              type="foodShow"

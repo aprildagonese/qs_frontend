@@ -1,99 +1,71 @@
 const data = {
-"user_id": "3",
-"meals": {
-  "dates": [{
-      "Sat May 11 2019 00:00:00 GMT-0600 (Mountain Daylight Time)": [
-          {
-              "id": 4,
-              "name": "Lunch",
-              "date": "2019-05-11T06:00:00.000Z",
-              "foods": [
-                  {
-                      "id": 6,
-                      "name": "Crab",
-                      "calories": 400,
-                      "createdAt": "2019-05-12T01:19:02.140Z",
-                      "updatedAt": "2019-05-12T01:19:02.140Z"
-                  },
-                  {
-                      "id": 4,
-                      "name": "Chicken",
-                      "calories": 150,
-                      "createdAt": "2019-05-12T01:16:55.489Z",
-                      "updatedAt": "2019-05-12T01:16:55.489Z"
-                  }
-              ]
-          },
-          {
-              "id": 5,
-              "name": "Dinner",
-              "date": "2019-05-11T06:00:00.000Z",
-              "foods": [
-                  {
-                      "id": 2,
-                      "name": "Egg",
-                      "calories": 75,
-                      "createdAt": "2019-05-10T01:28:17.920Z",
-                      "updatedAt": "2019-05-10T01:28:17.920Z"
-                  }
-              ]
-          },
-          {
-              "id": 6,
-              "name": "Dessert",
-              "date": "2019-05-11T06:00:00.000Z",
-              "foods": [
-                  {
-                      "id": 3,
-                      "name": "Cupcake",
-                      "calories": 450,
-                      "createdAt": "2019-05-10T01:28:17.920Z",
-                      "updatedAt": "2019-05-10T01:28:17.920Z"
-                  }
-              ]
-          }
-      ]
-  },
-  {
-      "Fri May 10 2019 00:00:00 GMT-0600 (Mountain Daylight Time)": [
-          {
-              "id": 4,
-              "name": "Lunch",
-              "date": "2019-05-10T06:00:00.000Z",
-              "foods": [
-                  {
-                      "id": 6,
-                      "name": "Muffin",
-                      "calories": 400,
-                      "createdAt": "2019-05-12T01:19:02.140Z",
-                      "updatedAt": "2019-05-12T01:19:02.140Z"
-                  },
-                  {
-                      "id": 4,
-                      "name": "Chicken",
-                      "calories": 150,
-                      "createdAt": "2019-05-12T01:16:55.489Z",
-                      "updatedAt": "2019-05-12T01:16:55.489Z"
-                  }
-              ]
-          },
-          {
-              "id": 5,
-              "name": "Dinner",
-              "date": "2019-05-11T06:00:00.000Z",
-              "foods": [
-                  {
-                      "id": 2,
-                      "name": "Egg",
-                      "calories": 75,
-                      "createdAt": "2019-05-10T01:28:17.920Z",
-                      "updatedAt": "2019-05-10T01:28:17.920Z"
-                  }
-              ]
-          }
-      ]
-  }
-]}
+    "user_id": "2",
+    "meals": [
+        {
+            "Thu May 09 2019 00:00:00 GMT+0000 (Coordinated Universal Time)": [
+                {
+                    "id": 4,
+                    "name": "Breakfast",
+                    "date": "2019-05-09T00:00:00.000Z",
+                    "foods": [
+                        {
+                            "id": 3,
+                            "name": "Cupcake",
+                            "calories": 450,
+                            "createdAt": "2019-05-13T19:03:08.563Z",
+                            "updatedAt": "2019-05-13T19:03:08.563Z"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "Lunch",
+                    "date": "2019-05-09T00:00:00.000Z",
+                    "foods": [
+                        {
+                            "id": 2,
+                            "name": "Egg",
+                            "calories": 75,
+                            "createdAt": "2019-05-13T19:03:08.563Z",
+                            "updatedAt": "2019-05-13T19:03:08.563Z"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "name": "Dinner",
+                    "date": "2019-05-09T00:00:00.000Z",
+                    "foods": [
+                        {
+                            "id": 1,
+                            "name": "Popcorn",
+                            "calories": 105,
+                            "createdAt": "2019-05-13T19:03:08.563Z",
+                            "updatedAt": "2019-05-13T19:03:08.563Z"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Fri May 10 2019 00:00:00 GMT+0000 (Coordinated Universal Time)": [
+                {
+                    "id": 7,
+                    "name": "Dinner",
+                    "date": "2019-05-10T00:00:00.000Z",
+                    "foods": [
+                        {
+                            "id": 1,
+                            "name": "Popcorn",
+                            "calories": 105,
+                            "createdAt": "2019-05-13T19:03:08.563Z",
+                            "updatedAt": "2019-05-13T19:03:08.563Z"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
 
 module.exports = data;

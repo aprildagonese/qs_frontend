@@ -1,0 +1,12 @@
+.dateMeals {
+  display: flex;
+  flex-direction: row;
+  background-color: #F1F7ED;
+  width: 94%;
+  align-items: center;
+  border-radius: 5px;
+  margin: 3%;
+  padding: 3%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Meal from './Meal';
+import './dateMeals.css';
 
 class DateMeals extends Component {
   constructor() {
@@ -14,7 +15,7 @@ class DateMeals extends Component {
     return(
       <>
         { !this.props.meals
-          ? <div>Choose a date from the calendar to see your meals, or add a food to get started.</div>
+          ? <div className="get-started-msg">Choose a date from the calendar to see your meals, or add a meal to start logging calories.</div>
           : <div className='dateMeals'>
               <div className='dateMeals-left'>
                 {this.props.meals.map(meal => {
