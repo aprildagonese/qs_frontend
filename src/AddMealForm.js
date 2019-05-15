@@ -30,7 +30,6 @@ class AddMealForm extends Component {
   changeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    console.log(this.state.food)
     this.setState({ [name]: value })
   }
 
