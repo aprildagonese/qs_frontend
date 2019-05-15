@@ -10,7 +10,8 @@ class SearchBar extends Component {
       food: '',
       showModal: false,
       searchResults: null,
-      recipes: null
+      recipes: null,
+      foodSearch: null
     }
   }
 
@@ -25,10 +26,12 @@ class SearchBar extends Component {
   enterListener = async (event) => {
     if (event.charCode === 13) {
       event.preventDefault();
-      await this.fetchFoodAndRecipes(event.target.value)
+      var food = await event.target.value
+      await this.fetchFoodAndRecipes(food)
       this.setState({
         food: '',
-        showModal: true
+        showModal: true,
+        foodSearch: food
       });
     }
   }
@@ -62,6 +65,7 @@ class SearchBar extends Component {
                  value={this.state.food}
                  placeholder="Search Foods"
                  onChange={this.changeFood}
+                 className="searchbar"
                  onKeyPress={this.enterListener}
                  />
         </form>
@@ -69,6 +73,7 @@ class SearchBar extends Component {
                showModal={this.state.showModal}
                type={this.state.searchResults ? "foodShow" : "createFood" }
                food={this.state.searchResults}
+               foodSearch={this.state.foodSearch}
                recipes={this.state.recipes}
                setResults={this.setResults}/>
       </div>

@@ -3,6 +3,7 @@ import AddMealForm from './AddMealForm';
 import AddFoodForm from './AddFoodForm';
 import FoodShow from './FoodShow';
 import './Modal.css';
+import './form.css';
 
 class Modal extends Component {
 
@@ -12,14 +13,16 @@ class Modal extends Component {
         {this.props.type === "addFood" &&
           <section className="modal-main">
             <AddMealForm user={this.props.user}
-                         closeModal={this.props.closeModal}/>
-            <button onClick={this.props.closeModal}>Close</button>
+                         closeModal={this.props.closeModal}
+                         food=''/>
+            <button className="close-modal" onClick={this.props.closeModal}>Close</button>
           </section>
         }
         {this.props.type === "createFood" &&
           <section className="modal-main">
             <AddFoodForm closeModal={this.props.hideModal}
-            setResults={this.props.setResults}/>
+                         setResults={this.props.setResults}
+                         foodSearch={this.props.foodSearch}/>
             <button onClick={this.props.hideModal}>Close</button>
           </section>
         }
@@ -28,13 +31,12 @@ class Modal extends Component {
             <FoodShow closeModal={this.props.hideModal}
                       food={this.props.food}
                       recipes={this.props.recipes}/>
-            <button onClick={this.props.hideModal}>Close</button>
+            <button className="close-modal" onClick={this.props.hideModal}>Close</button>
           </section>
         }
         {this.props.type === "login" &&
           <section className="modal-main">
-
-            <button onClick={this.props.hideModal}>Close</button>
+            <button className="close-modal" onClick={this.props.hideModal}>Close</button>
           </section>
         }
       </div>

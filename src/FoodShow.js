@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import AddMealForm from './AddMealForm';
+import './foodShow.css'
 
 class FoodShow extends Component {
   constructor() {
@@ -10,22 +12,30 @@ class FoodShow extends Component {
 
   render() {
     return(
-      <div>
+      <>
       { this.props.food &&
-        <>
-          <h3>{this.props.food.name}</h3>
-          <h4>Calories: {this.props.food.calories}</h4>
-          <h4>Recipes</h4>
-          {this.props.recipes && this.props.recipes.recipes.map(recipe => {
-            return <a onClick={() =>  window.open(recipe.recipe_url, "_blank")}
-                      href={recipe.url}
-                      target="_blank">
-              {recipe.label}<br/>
-            </a>
-          })}
-        </>
+        <div className="food-show">
+          <h4 className="food-show-title">{this.props.food.name} | Calories: {this.props.food.calories} </h4>
+          <span className="food-show-middle">
+            <div className="add-meal-box">
+              <AddMealForm food={this.props.food.name}/>
+            </div>
+            <div className="recipes-list">
+              <h4 className="recipes-title">Recipes</h4>
+              {this.props.recipes && this.props.recipes.recipes.map(recipe => {
+                return <a onClick={() =>  window.open(recipe.recipe_url, "_blank")}
+                href={recipe.url}
+                target="_blank"
+                className="recipes-list"
+                style={{cursor: 'pointer'}}>
+                {recipe.label}<br/>
+                </a>
+              })}
+            </div>
+          </span>
+        </div>
       }
-      </div>
+      </>
     )
   }
 }
