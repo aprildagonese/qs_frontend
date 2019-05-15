@@ -14,13 +14,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUserKey: "1234",
+      currentUserKey: null,
       recipeData: [],
       currentIngredient: null,
       currentDate: null,
       currentFoods: null,
       currentMeal: null,
-      mealHistory: data,
+      mealHistory: null,
       dateMeals: null,
       isLoading: false,
       showModal: false,
@@ -64,6 +64,13 @@ class App extends Component {
     }
   }
 
+  fetchMeals = async (key) => {
+    const mealResults = await fetchMealHistory(key);
+    this.setState({
+      mealHistory: mealResults
+    })
+  }
+
   logOut = async (key) => {
     this.setState({
       currentUserKey: null,
@@ -104,7 +111,9 @@ class App extends Component {
         {this.state.currentUserKey
           ?  <>
               <Nav showModal={this.showModal}
-                   logOut={this.logOut}/>
+                   logOut={this.logOut}
+                   fetchMeals={this.fetchMeals}
+                   userKey={this.state.currentUserKey}/>
               <Modal closeModal={this.hideModal}
                      showModal={this.state.showModal}
                      type="addFood"

@@ -17,7 +17,8 @@ class Modal extends Component {
           <section className="modal-main">
             <AddMealForm user={this.props.user}
                          closeModal={this.props.closeModal}
-                         food=''/>
+                         food=''
+                         fetchMeals={this.props.fetchMeals}/>
             <button className="close-modal" onClick={this.props.closeModal}>Close</button>
           </section>
         }
@@ -32,8 +33,11 @@ class Modal extends Component {
         {this.props.type === "foodShow" &&
           <section className="modal-main">
             <FoodShow closeModal={this.props.hideModal}
+                      closeModal2={this.props.closeModal}
                       food={this.props.food}
-                      recipes={this.props.recipes}/>
+                      recipes={this.props.recipes}
+                      fetchMeals={this.props.fetchMeals}
+                      userKey={this.props.userKey}/>
             <button className="close-modal" onClick={this.props.hideModal}>Close</button>
           </section>
         }

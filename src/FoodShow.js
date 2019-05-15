@@ -18,7 +18,10 @@ class FoodShow extends Component {
           <h4 className="food-show-title">{this.props.food.name} | Calories: {this.props.food.calories} </h4>
           <span className="food-show-middle">
             <div className="add-meal-box">
-              <AddMealForm food={this.props.food.name}/>
+              <AddMealForm food={this.props.food.name}
+                           closeModal={this.props.closeModal2}
+                           fetchMeals={this.props.fetchMeals}
+                           userKey={this.props.userKey}/>
             </div>
             <div className="recipes-list">
               <h4 className="recipes-title">Recipes</h4>

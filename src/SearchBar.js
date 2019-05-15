@@ -70,12 +70,15 @@ class SearchBar extends Component {
                  />
         </form>
         <Modal hideModal={this.hideModal}
+               closeModal={this.hideModal}
+               fetchMeals={this.props.fetchMeals}
                showModal={this.state.showModal}
                type={this.state.searchResults ? "foodShow" : "createFood" }
                food={this.state.searchResults}
                foodSearch={this.state.foodSearch}
                recipes={this.state.recipes}
-               setResults={this.setResults}/>
+               setResults={this.setResults}
+               userKey={this.props.userKey}/>
       </div>
     )
   }
