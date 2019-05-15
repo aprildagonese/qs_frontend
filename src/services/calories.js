@@ -51,6 +51,7 @@ export async function fetchFood(food) {
   } catch (error) {
     return null;
   }
+}
 
 export async function logInUser(email, password) {
   try {
