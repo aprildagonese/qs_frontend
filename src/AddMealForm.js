@@ -33,25 +33,25 @@ class AddMealForm extends Component {
       <div>
         Add Food to Any Meal
         <form>
-           <input type="text"
-                  name="meal"
-                  value={this.state.meal}
-                  placeholder="Enter meal name"
-                  onChange={this.changeHandler} />
-           <input type="date"
-                  name="date"
-                  value={this.state.date}
-                  placeholder="Enter meal date"
-                  onChange={this.changeHandler} />
-           <input type="text"
-                  name="food"
-                  value={this.state.food}
-                  placeholder="Enter food name"
-                  onChange={this.changeHandler} />
-           <input type="button"
-                  name="submit"
-                  value="Submit"
-                  onClick={this.saveEntry} />
+          <input type="text"
+                 name="meal"
+                 value={this.state.meal}
+                 placeholder="Enter meal name"
+                 onChange={this.changeHandler} />
+          <input type="date"
+                 name="date"
+                 value={this.state.date}
+                 placeholder="Enter meal date"
+                 onChange={this.changeHandler} />
+          <input type="text"
+                 name="food"
+                 value={this.state.food}
+                 placeholder="Enter food name"
+                 onChange={this.changeHandler} />
+          <input type="button"
+                 name="submit"
+                 value="Submit"
+                 onClick={this.saveEntry} />
         </form>
       </div>
     )
