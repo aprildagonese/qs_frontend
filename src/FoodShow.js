@@ -25,6 +25,7 @@ class FoodShow extends Component {
               {this.props.recipes && this.props.recipes.recipes.map(recipe => {
                 return <a onClick={() =>  window.open(recipe.recipe_url, "_blank")}
                 href={recipe.url}
+                rel="noopener noreferrer"
                 target="_blank"
                 className="recipes-list"
                 style={{cursor: 'pointer'}}>
