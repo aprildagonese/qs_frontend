@@ -14,7 +14,6 @@ class AddFoodForm extends Component {
     const food = this.state.food
     const calories = this.state.calories
     const results = await saveFoodEntry(food, calories)
-    console.log(results)
     this.props.setResults(results)
   }
 
