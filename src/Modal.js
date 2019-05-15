@@ -24,7 +24,8 @@ class Modal extends Component {
         {this.props.type === "createFood" &&
           <section className="modal-main">
             <AddFoodForm closeModal={this.props.hideModal}
-            setResults={this.props.setResults}/>
+                         setResults={this.props.setResults}
+                         foodSearch={this.props.foodSearch}/>
             <button onClick={this.props.hideModal}>Close</button>
           </section>
         }

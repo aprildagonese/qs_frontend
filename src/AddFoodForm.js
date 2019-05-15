@@ -10,8 +10,15 @@ class AddFoodForm extends Component {
     }
   };
 
+  componentDidMount = () => {
+    this.setState({
+      food: this.props.foodSearch
+    })
+    console.log("I AM BUTTS: ", this.state.food)
+  }
+
   saveEntry = async () => {
-    const food = this.state.food
+    const food = this.props.foodSearch
     const calories = this.state.calories
     const results = await saveFoodEntry(food, calories)
     this.props.setResults(results)
@@ -26,22 +33,25 @@ class AddFoodForm extends Component {
 
   render() {
     return(
-      <div>
+      <div className="add-food-form">
         <span className="add-food-title">We don't have that food yet. Would you like to add it to our database?</span>
-        <form>
+        <form className="form">
           <input type="text"
                  name="food"
-                 value={this.state.food}
-                 placeholder="Enter food name"
+                 value={this.props.foodSearch}
+                 placeholder="Enter Food Name"
+                 className="form-input"
                  onChange={this.changeHandler} />
           <input type="text"
                  name="calories"
                  value={this.state.calories}
-                 placeholder="Enter calories"
+                 placeholder="Enter Calories"
+                 className="form-input"
                  onChange={this.changeHandler} />
           <input type="button"
                  name="submit"
                  value="Submit"
+                 className="button form-button"
                  onClick={this.saveEntry} />
         </form>
       </div>

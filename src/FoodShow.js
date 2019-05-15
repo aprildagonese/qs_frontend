@@ -26,7 +26,8 @@ class FoodShow extends Component {
                 return <a onClick={() =>  window.open(recipe.recipe_url, "_blank")}
                 href={recipe.url}
                 target="_blank"
-                className="recipes-list">
+                className="recipes-list"
+                style={{cursor: 'pointer'}}>
                 {recipe.label}<br/>
                 </a>
               })}
