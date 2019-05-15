@@ -14,7 +14,6 @@ class AddFoodForm extends Component {
     this.setState({
       food: this.props.foodSearch
     })
-    console.log("I AM BUTTS: ", this.state.food)
   }
 
   saveEntry = async () => {
