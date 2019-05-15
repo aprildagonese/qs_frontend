@@ -11,10 +11,16 @@
   position:fixed;
   background: white;
   width: 80%;
-  height: auto;
+  height: 38%;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  border-radius: 5px;
+  background-color: #F0EDEE;
+  padding: 2%;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
 }
 
 .display-block {

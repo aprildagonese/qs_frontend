@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AddMealForm from './AddMealForm';
 import FoodShow from './FoodShow';
 import './Modal.css';
+import './form.css';
 
 class Modal extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class Modal extends Component {
           <section className="modal-main">
             <AddMealForm user={this.props.user}
                          closeModal={this.props.closeModal}/>
-            <button onClick={this.props.closeModal}>Close</button>
+            <button className="close-modal" onClick={this.props.closeModal}>Close</button>
           </section>
         }
         {this.props.type === "foodShow" &&
@@ -23,13 +24,13 @@ class Modal extends Component {
             <FoodShow closeModal={this.props.hideModal}
                       food={this.props.food}
                       recipes={this.props.recipes}/>
-            <button onClick={this.props.hideModal}>Close</button>
+            <button className="close-modal" onClick={this.props.hideModal}>Close</button>
           </section>
         }
         {this.props.type === "login" &&
           <section className="modal-main">
 
-            <button onClick={this.props.hideModal}>Close</button>
+            <button className="close-modal" onClick={this.props.hideModal}>Close</button>
           </section>
         }
       </div>

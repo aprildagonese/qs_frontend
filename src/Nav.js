@@ -14,7 +14,7 @@ class Nav extends Component {
   render() {
     return (
       <div className='nav'>
-        <h1>Quantified Self</h1>
+        <h1>quantifiedSelf</h1>
         <div className="nav-right">
         <button className='add-food'
                 onClick={this.addFood}>

@@ -14,17 +14,17 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUserKey: null,
+      currentUserKey: "1234",
       recipeData: [],
       currentIngredient: null,
       currentDate: null,
       currentFoods: null,
       currentMeal: null,
-      mealHistory: null,
+      mealHistory: data,
       dateMeals: null,
       isLoading: false,
       showModal: false,
-      userID: null, //UNDO w/ componentDidMount
+      userID: null,
       mealID: null,
       error: null
     }
@@ -66,7 +66,19 @@ class App extends Component {
 
   logOut = async (key) => {
     this.setState({
-      currentUserKey: null
+      currentUserKey: null,
+      recipeData: [],
+      currentIngredient: null,
+      currentDate: null,
+      currentFoods: null,
+      currentMeal: null,
+      mealHistory: null,
+      dateMeals: null,
+      isLoading: false,
+      showModal: false,
+      userID: null,
+      mealID: null,
+      error: null
     })
   }
 
@@ -99,6 +111,7 @@ class App extends Component {
                      user={this.state.currentUserKey}/>
               <span className="body-panel">
                 <span className="foods-panel">
+                {this.state.currentMeal &&
                 <MealFoods key={this.state.currentDate}
                            meal={this.state.currentMeal}
                            foods={this.state.currentFoods}
@@ -107,6 +120,7 @@ class App extends Component {
                            mealID={this.state.mealID}
                            setFoodID={this.setFoodID}
                            />
+                }
                 <DateMeals meals={this.state.dateMeals}
                            setCurrentFoods={this.setCurrentFoods}/>
                 </span>
