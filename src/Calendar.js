@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import CalDate from './CalDate';
 
 class Calendar extends Component {
-  constructor() {
-    super()
-  };
-
+  
   render(dates) {
     return (
       <div className='calendar'>
@@ -14,9 +11,6 @@ class Calendar extends Component {
           var newDate = new Date(Object.keys(date)[0])
           const prettyDate = newDate.toLocaleDateString('en-US')
           const meals = date[Object.keys(date)[0]]
-          console.log(date)
-          console.log(Object.keys(date)[0])
-          console.log(meals)
           return <CalDate key={prettyDate}
                           date={prettyDate}
                           dateMeals={meals}

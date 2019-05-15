@@ -25,12 +25,11 @@ class SearchBar extends Component {
   enterListener = async (event) => {
     if (event.charCode === 13) {
       event.preventDefault();
-      const response = await this.fetchFoodAndRecipes(event.target.value)
+      await this.fetchFoodAndRecipes(event.target.value)
       this.setState({
         food: '',
         showModal: true
       });
-      // console.log(this.state.recipes)
     }
   }
 

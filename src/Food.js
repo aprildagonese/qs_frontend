@@ -25,8 +25,7 @@ class Food extends Component {
     const userID = this.props.userID;
     const mealID = this.props.mealID;
     const foodID = this.props.data.id;
-    // deleteFood(userID, mealID, foodID);
-    console.log(userID, mealID, foodID);
+    deleteFood(userID, mealID, foodID);
   }
 
   hideModal = () => {

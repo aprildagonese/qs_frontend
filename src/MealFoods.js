@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import Food from './Food';
 
 class MealFoods extends Component {
-  constructor() {
-    super()
-  };
-
-
-
+  
   render() {
     return(
       <div className='meal-foods'>

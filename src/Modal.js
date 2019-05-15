@@ -5,9 +5,6 @@ import FoodShow from './FoodShow';
 import './Modal.css';
 
 class Modal extends Component {
-  constructor() {
-    super()
-  };
 
   render() {
     return(

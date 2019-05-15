@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Meal from './Meal';
 
 class DateMeals extends Component {
-  constructor() {
-    super()
-  };
 
   totalCals = () => {
     return "Butts"

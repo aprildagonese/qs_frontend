@@ -16,8 +16,7 @@ class AddMealForm extends Component {
     const meal = this.state.meal
     const date = this.state.date
     const food = this.state.food
-    // await saveMealEntry(user, meal, date, food)
-    console.log(user, meal, date, food)
+    await saveMealEntry(user, meal, date, food)
     this.props.closeModal()
   }
 

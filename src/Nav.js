@@ -4,9 +4,6 @@ import Logout from './Logout';
 import './Nav.css';
 
 class Nav extends Component {
-  constructor() {
-    super()
-  }
 
   addFood = () => {
     this.props.showModal()

@@ -14,13 +14,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUserKey: null,
+      currentUserKey: '1234',
       recipeData: [],
       currentIngredient: null,
       currentDate: null,
       currentFoods: null,
       currentMeal: null,
-      mealHistory: null,
+      mealHistory: data,
       dateMeals: null,
       isLoading: false,
       showModal: false,
