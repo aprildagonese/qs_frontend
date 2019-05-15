@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchBar from './SearchBar';
 import Logout from './Logout';
 import './Nav.css';
 
@@ -20,6 +21,7 @@ class Nav extends Component {
                 onClick={this.addFood}>
                 Add Meal
         </button>
+        <SearchBar/>
         <Logout logOut={this.props.logOut}/>
         </div>
       </div>
