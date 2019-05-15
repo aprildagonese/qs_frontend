@@ -26,6 +26,12 @@ class Modal extends Component {
             <button onClick={this.props.hideModal}>Close</button>
           </section>
         }
+        {this.props.type === "login" &&
+          <section className="modal-main">
+
+            <button onClick={this.props.hideModal}>Close</button>
+          </section>
+        }
       </div>
     )
   }
