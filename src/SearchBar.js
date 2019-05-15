@@ -46,6 +46,14 @@ class SearchBar extends Component {
     })
   }
 
+  setResults = async (results) => {
+    const recipes = await fetchRecipes(results.name);
+    this.setState({
+      searchResults: results,
+      recipes: recipes
+    });
+  }
+
   render() {
     return(
       <div>
@@ -62,7 +70,8 @@ class SearchBar extends Component {
                showModal={this.state.showModal}
                type={this.state.searchResults ? "foodShow" : "createFood" }
                food={this.state.searchResults}
-               recipes={this.state.recipes}/>
+               recipes={this.state.recipes}
+               setResults={this.setResults}/>
       </div>
     )
   }

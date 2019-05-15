@@ -13,9 +13,9 @@ class AddFoodForm extends Component {
   saveEntry = async () => {
     const food = this.state.food
     const calories = this.state.calories
-    await saveFoodEntry(food, calories)
-    console.log(food, calories)
-    this.props.closeModal()
+    const results = await saveFoodEntry(food, calories)
+    console.log(results)
+    this.props.setResults(results)
   }
 
   changeHandler = (event) => {
