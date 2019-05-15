@@ -14,7 +14,7 @@ class DateMeals extends Component {
     return(
       <>
         { !this.props.meals
-          ? <div>Choose a date from the calendar to see your meals.</div>
+          ? <div>Choose a date from the calendar to see your meals, or add a food to get started.</div>
           : <div className='dateMeals'>
               <div className='dateMeals-left'>
                 {this.props.meals.map(meal => {

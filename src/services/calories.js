@@ -52,4 +52,24 @@ export async function fetchFood(food) {
     return null;
   }
 
+export async function logInUser(email, password) {
+  try {
+    const url = "https://choosin-foods.herokuapp.com/api/v1/users?email=" + email + "&password=" + password
+    const result = await fetch(url, {method: 'POST'});
+    const api_key = await result.json()
+    return api_key
+  } catch (error) {
+    return error
+  }
+}
+
+export async function registerUser(email, password, passwordConfirmation) {
+  try {
+    const url = "https://choosin-foods.herokuapp.com/api/v1/users/register?email=" + email + "&password=" + password + "&password_confirmation=" + passwordConfirmation
+    const result = await fetch(url, {method: 'POST'});
+    const api_key = await result.json()
+    return api_key
+  } catch (error) {
+    return error
+  }
 }
