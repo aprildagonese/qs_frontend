@@ -22,20 +22,24 @@ class SearchBar extends Component {
     this.setState({ showModal: false });
   };
 
-  enterListener = (event) => {
+  enterListener = async (event) => {
     if (event.charCode === 13) {
       event.preventDefault();
-      this.fetchFoodAndRecipes(event.target.value)
+      const response = await this.fetchFoodAndRecipes(event.target.value)
       this.setState({
         food: '',
         showModal: true
       });
+      // console.log(this.state.recipes)
     }
   }
 
   fetchFoodAndRecipes = async (search) => {
     const food = await fetchFood(search);
-    const recipes = await fetchRecipes(food);
+    let recipes = null
+    if (food) {
+      recipes = await fetchRecipes(food.name);
+    }
     this.setState({
       searchResults: food,
       recipes: recipes
@@ -56,7 +60,7 @@ class SearchBar extends Component {
         </form>
         <Modal hideModal={this.hideModal}
                showModal={this.state.showModal}
-               type="foodShow"
+               type={this.state.searchResults ? "foodShow" : "createFood" }
                food={this.state.searchResults}
                recipes={this.state.recipes}/>
       </div>
