@@ -10,7 +10,7 @@ const data = {
               "foods": [
                   {
                       "id": 6,
-                      "name": "Salad",
+                      "name": "Crab",
                       "calories": 400,
                       "createdAt": "2019-05-12T01:19:02.140Z",
                       "updatedAt": "2019-05-12T01:19:02.140Z"
