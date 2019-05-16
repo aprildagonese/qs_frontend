@@ -3,7 +3,7 @@ import Food from './Food';
 import './mealFoods.css'
 
 class MealFoods extends Component {
-  
+
   render() {
     return(
       <div className='meal-foods'>
@@ -13,6 +13,8 @@ class MealFoods extends Component {
             {this.props.foods.map(food => {
               return <Food key={food.name}
                            data={food}
+                           getMeals={this.props.getMeals}
+                           userKey={this.props.userKey}
                            userID={this.props.userID}
                            mealID={this.props.mealID}
                            />
