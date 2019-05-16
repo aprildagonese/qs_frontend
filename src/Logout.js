@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class Logout extends Component {
-  constructor() {
-    super()
-  };
 
   logOut = async () => {
     this.props.logOut()

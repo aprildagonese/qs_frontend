@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class CalDate extends Component {
-  constructor() {
-    super()
-  };
 
   setDate = () => {
     this.props.calSetDate(this.props.date, this.props.dateMeals)

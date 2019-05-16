@@ -3,9 +3,6 @@ import Meal from './Meal';
 import './dateMeals.css';
 
 class DateMeals extends Component {
-  constructor() {
-    super()
-  };
 
   totalCals = () => {
     let total = 0;

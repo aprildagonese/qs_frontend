@@ -14,13 +14,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUserKey: "1234",
+      currentUserKey: null,
       recipeData: [],
       currentIngredient: null,
       currentDate: null,
       currentFoods: null,
       currentMeal: null,
-      mealHistory: data,
+      mealHistory: null,
       dateMeals: null,
       isLoading: false,
       showModal: false,
@@ -94,9 +94,20 @@ class App extends Component {
     this.setState({ showModal: true });
   };
 
-  hideModal = () => {
+  hideModal = async () => {
+    const mealResults = await this.getMeals();
     this.setState({ showModal: false });
   };
+
+  getMeals = async () => {
+    try {
+      const mealResults = await fetchMealHistory(this.state.currentUserKey);
+      this.setState({ mealHistory: mealResults });
+      return mealResults;
+    } catch (error) {
+      return null;
+    }
+  }
 
   render() {
     return (
@@ -104,11 +115,13 @@ class App extends Component {
         {this.state.currentUserKey
           ?  <>
               <Nav showModal={this.showModal}
+                   userKey={this.state.currentUserKey}
+                   getMeals={this.getMeals}
                    logOut={this.logOut}/>
               <Modal closeModal={this.hideModal}
                      showModal={this.state.showModal}
                      type="addFood"
-                     user={this.state.currentUserKey}/>
+                     userKey={this.state.currentUserKey}/>
               <span className="body-panel">
                 <span className="foods-panel">
                 {this.state.currentMeal &&
@@ -116,6 +129,8 @@ class App extends Component {
                            meal={this.state.currentMeal}
                            foods={this.state.currentFoods}
                            date={this.state.currentDate}
+                           getMeals={this.getMeals}
+                           userKey={this.state.currentUserKey}
                            userID={this.state.userID}
                            mealID={this.state.mealID}
                            setFoodID={this.setFoodID}

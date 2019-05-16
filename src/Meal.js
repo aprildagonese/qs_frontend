@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class Meal extends Component {
-  constructor() {
-    super()
-  };
 
   setCurrentFoods = () => {
     this.props.setCurrentFoods(this.props.foods, this.props.name, this.props.mealID)

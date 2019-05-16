@@ -26,7 +26,8 @@
   background-color: #07393C;
   width: 20%;
   align-items: center;
-  height: -webkit-fill-available;
+  height: 75vh;
+  overflow: scroll;
   border-radius: 5px;
   margin: 2%;
   padding: 2%;
