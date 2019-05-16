@@ -29,6 +29,8 @@ class Food extends Component {
   }
 
   hideModal = () => {
+    console.log('foods: ', this.props.userKey)
+    this.props.getMeals()
     this.setState({ showModal: false });
   };
 
@@ -59,8 +61,9 @@ class Food extends Component {
               onClick={this.deleteRecord}>
         X
       </button>
-      <Modal hideModal={this.hideModal}
+      <Modal closeModal={this.hideModal}
              showModal={this.state.showModal}
+             userKey={this.props.userKey}
              type="foodShow"
              food={this.props.data}
              recipes={this.state.recipes}/>
