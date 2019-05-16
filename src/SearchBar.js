@@ -20,6 +20,7 @@ class SearchBar extends Component {
   }
 
   hideModal = () => {
+    this.props.getMeals()
     this.setState({ showModal: false });
   };
 
@@ -69,11 +70,13 @@ class SearchBar extends Component {
                  onKeyPress={this.enterListener}
                  />
         </form>
-        <Modal hideModal={this.hideModal}
+        <Modal closeModal={this.hideModal}
                showModal={this.state.showModal}
                type={this.state.searchResults ? "foodShow" : "createFood" }
+               userKey={this.props.userKey}
                food={this.state.searchResults}
                foodSearch={this.state.foodSearch}
+               getMeals={this.props.getMeals}
                recipes={this.state.recipes}
                setResults={this.setResults}/>
       </div>
