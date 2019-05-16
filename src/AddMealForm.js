@@ -19,7 +19,6 @@ class AddMealForm extends Component {
   }
 
   saveEntry = async () => {
-    console.log("addMealForm: ", this.props.userKey)
     const userKey = this.props.userKey
     const meal = this.state.meal
     const date = this.state.date

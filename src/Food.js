@@ -29,7 +29,6 @@ class Food extends Component {
   }
 
   hideModal = () => {
-    console.log('foods: ', this.props.userKey)
     this.props.getMeals()
     this.setState({ showModal: false });
   };

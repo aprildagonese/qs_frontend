@@ -6,7 +6,6 @@ import './Nav.css';
 class Nav extends Component {
 
   addFood = () => {
-    console.log("nav: ", this.props.userKey)
     this.props.showModal()
   }
 

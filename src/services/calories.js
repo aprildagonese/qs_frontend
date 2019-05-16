@@ -11,7 +11,6 @@ export async function fetchMealHistory(userKey) {
 
 export async function saveMealEntry(userKey, meal, date, food) {
   try {
-    console.log('calories ', userKey)
     const url = "https://choosin-foods.herokuapp.com/api/v1/meal-foods?api_key=" + userKey + "&meal_name=" + meal + "&date=" + date + "&food_name=" + food
     const result = await fetch(url, {method: 'POST'});
     const data = await result.json()
