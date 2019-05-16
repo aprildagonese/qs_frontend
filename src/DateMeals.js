@@ -8,7 +8,13 @@ class DateMeals extends Component {
   };
 
   totalCals = () => {
-    return "Butts"
+    let total = 0;
+    this.props.meals.map(meal => {
+      meal.foods.map(food => {
+        total += food.calories
+      });
+    });
+    return total;
   }
 
   render() {
